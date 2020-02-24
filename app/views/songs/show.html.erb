@@ -1,6 +1,8 @@
 
 <h3><%= link_to "Back to #{@artist.full_name}", artist_path(@artist) %></h3>
 
+<h3><%= link_to "Go to All Billboards", billboards_path %></h3>
+
 <h1><%= @song.name %></h1>
 <h2> Genre:<%= @song.genre%></h2>
 <%= link_to 'Add Comment', new_song_comment_path(@song)%>

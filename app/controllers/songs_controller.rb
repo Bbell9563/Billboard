@@ -1,11 +1,13 @@
 class SongsController < ApplicationController
-  before_action :set_artist
+  before_action :set_artist, only: [:update, :edit, :destroy]
   before_action :set_song, only: [:update, :edit, :destroy, :show]
   def index
     @songs = @artist.songs
   end
 
   def show
+
+
   end
 
   def new
@@ -23,18 +25,6 @@ class SongsController < ApplicationController
     end
   end
 
-  # def new 
-  #   @item = Item.new(department_id: params[:department_id])
-  #   render partial: 'form'
-  # end 
-  # def create
-  #   @item = @department.items.new(item_params)
-  #   if @item.save
-  #     redirect_to department_items_path(@department)
-  #   else  
-  #     render :new 
-  #   end
-  # end
 
 
   def edit

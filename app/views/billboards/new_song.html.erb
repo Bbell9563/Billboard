@@ -1,0 +1,6 @@
+<h1> add song to billboard</h1>
+
+
+<% @songs.each do |song|%>
+  <%= link_to song.name, add_billboard_song_path(@billboard, song), method: :post %>
+<% end %>

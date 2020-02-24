@@ -1,0 +1,6 @@
+<h1> BILLBOARDS </h1>
+<%= link_to "create new billboard", new_billboard_path%>
+
+<% @billboards.each do |billboard|%>
+  <p><%= link_to "#{billboard.name}", billboard %></p>
+<% end %>

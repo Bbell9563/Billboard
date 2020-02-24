@@ -1,0 +1,13 @@
+<h1><%= @song.id ? 'Edit Song' : 'Create Song' %></h1>
+<%= link_to  "back to songs", artist_path(@artist) %>
+<hr />
+<%= form_for [@artist, @song] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, required: true, autofocus: true %>
+
+  <%= f.label :genre %>
+  <%= f.text_field :genre %>
+
+
+  <%= f.submit %>
+<% end %>

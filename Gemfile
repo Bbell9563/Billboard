@@ -35,6 +35,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
   gem 'pry-rails'
   gem 'better_errors'
   gem 'binding_of_caller'

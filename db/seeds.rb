@@ -5,3 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'faker'
+
+10.times do
+  @billboard = Billboard.create(name: "Top 10 #{Faker::Music.genre}")
+end
+
+10.times do 
+  @artist = Artist.create(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    genre: Faker::Music.genre,
+    description: "Random info here")
+
+end
+

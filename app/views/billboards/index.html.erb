@@ -1,5 +1,12 @@
-<h1> BILLBOARDS </h1>
-<%= link_to "create new billboard", new_billboard_path%>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <h1 class = "billboard"> BILLBOARDS </h1>
+  <div>
+    <h3 class = "artist_list"><%= link_to "create new billboard", new_billboard_path%></h3>
+    <h3 class = "artist_list"><%= link_to "All Aritst", artists_path, class: "artist_list"%></h3>
+  </div>
+
+</nav>
+
 
 <% @billboards.each do |billboard|%>
   <p><%= link_to "#{billboard.name}", billboard %></p>

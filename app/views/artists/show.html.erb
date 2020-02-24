@@ -1,10 +1,16 @@
-<h1><%= @artist.full_name %></h1>
-<p>Find me in app/views/artist/show.html.erb</p>
-<%= link_to "Delete #{@artist.full_name}", artist_path(@artist), method: :delete%>
-<%= link_to "Update", edit_artist_path(@artist)%>
 
-<%= link_to "Add Song", new_artist_song_path(@artist)%>
+<h3><%= link_to "Back to Artist", artists_path%></h3>
+<h1 class = "artist_name"><%= @artist.full_name %></h1>
+<div class = "artist_choices">
+  <%= link_to "Delete #{@artist.full_name}", artist_path(@artist), method: :delete%>
+  <%= link_to "Update", edit_artist_path(@artist)%>
 
+  <%= link_to "Add Song", new_artist_song_path(@artist)%>
+</div>
+
+<h1>Songs:</h1>
 <% @artist.songs.each do |song|%>
-  <p><%= link_to song.name, artist_song_path(@artist, song) %></p>
+  <h2><%= link_to song.name, artist_song_path(@artist, song) %></h2>
+  <h5><%= link_to "Delete #{song.name}", artist_song_path(@artist, song), method: :delete%>
+  <h6><%= link_to "Update #{song.name}", edit_artist_song_path(@artist, song)%>
 <% end %>

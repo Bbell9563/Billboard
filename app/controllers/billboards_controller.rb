@@ -22,7 +22,7 @@ class BillboardsController < ApplicationController
 
   def remove_song
     Song.find(params[:song_id]).update(billboard_id: nil)
-    redirect_to billboard_path(@theater)
+    redirect_to billboard_path(@billboard)
   end
 
   def new

@@ -33,8 +33,10 @@ ActiveRecord::Schema.define(version: 2020_02_21_215905) do
   create_table "comments", force: :cascade do |t|
     t.string "author"
     t.text "body"
+    t.bigint "song_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["song_id"], name: "index_comments_on_song_id"
   end
 
   create_table "songs", force: :cascade do |t|
@@ -48,6 +50,7 @@ ActiveRecord::Schema.define(version: 2020_02_21_215905) do
     t.index ["billboard_id"], name: "index_songs_on_billboard_id"
   end
 
+  add_foreign_key "comments", "songs"
   add_foreign_key "songs", "artists"
   add_foreign_key "songs", "billboards"
 end

@@ -1,11 +1,15 @@
+<h2><%= link_to "Bakc to All Billboards", billboards_path %>
+
 <h2><%= @billboard.name%></h2>
 
 <h2><%= link_to "Edit", edit_billboard_path(@billboard) %></h2>
 
 
 <h2><%= link_to "Add song to #{@billboard.name}", new_billboard_song_path(@billboard)%></h2>
+<% if @songs.any?%>
+  <% @songs.each do |song|%>
 
-<% @billboard.songs.each do |song|%>
-
-  <p><%= link_to song.name, song_path(song) %></p>
+    <p><%= link_to song.name, song_path(song) %></p>
+    <%= link_to "Remove from Billboard", remove_billboard_song_path(@billboard, song), method: :delete%>
+  <% end %>
 <% end %>

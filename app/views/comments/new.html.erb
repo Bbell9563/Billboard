@@ -1,2 +1,11 @@
-<h1>Comments#new</h1>
-<p>Find me in app/views/comments/new.html.erb</p>
+
+<h1>Add A comment</h1>
+<%= form_for [@song, @comment] do |f| %>
+  <%= f.label :body %>
+  <%= f.text_area :body, required: true %>
+  <br />
+  <%= f.label :author %>
+  <%= f.text_field :author, placeholder: 'Leave Blank To Remain Anonymous' %>
+  <br />
+  <%= f.submit %>
+<% end %>
